@@ -2,7 +2,7 @@
 
 App is linked with [localHost:3000](http://localhost:3000/) when being run in development.
 
-https://dyme.herokuapp.com/login
+https://dyme.herokuapp.com
 
 ## MERGE MAIN TO YOUR BRANCH
 
