@@ -22,7 +22,7 @@ import Auth from "./utils/auth";
 
 function App() {
   const { loading, error, data } = useQuery(QUERY_me);
-  // isolate the DB data you need
+  // isolate the DB data you need.
 
   return (
     <Router>
