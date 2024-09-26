@@ -1,17 +1,16 @@
 // React Boilerplate
-import React, { useEffect, useState } from "react"; // Commented out as they're not used
-// import {
-//   ApolloClient,
-//   InMemoryCache,
-//   ApolloProvider,
-//   createHttpLink,
-//   useQuery,
-// } from "@apollo/client";
-// import { setContext } from "@apollo/client/link/context";
+import React, { useEffect, useState } from "react";
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+  useQuery,
+} from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Link, Navigate } from "react-router-dom";
-// import { QUERY_ONE_USER, QUERY_me } from "./utils/queries"; // Commented out as they're not used
-
+import { QUERY_ONE_USER, QUERY_me } from "./utils/queries";
 // test
 
 // pages
@@ -19,10 +18,10 @@ import HomePage from "./pages/HomePage";
 import QuestionPage from "./pages/QuestionPage";
 import LoginSignupPage from "./pages/LoginSignupPage";
 import ExpensesPage from "./pages/ExpensesPage";
-// import Auth from "./utils/auth"; // Commented out as it's not used
+import Auth from "./utils/auth";
 
 function App() {
-  // const { loading, error, data } = useQuery(QUERY_me); // Commented out as it's not used
+  const { loading, error, data } = useQuery(QUERY_me);
   // isolate the DB data you need
 
   return (
@@ -36,7 +35,7 @@ function App() {
             {/* needs below */}
             <Route path="/expenses" element={<ExpensesPage />} />
             <Route path="/expense" element={<ExpensesPage />} />
-            <Route path="/home" element={<HomePage />} />
+            <Route path="/home" element={<HomePage user={data?.me} />} />
             <Route path="/login" element={<LoginSignupPage />} />
             <Route path="*" element={<Navigate to="/login" />} />
           </Routes>
