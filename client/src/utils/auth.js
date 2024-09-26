@@ -1,5 +1,6 @@
 // use this to decode a token and get the user's information out of it
-import jwtDecode from 'jwt-decode'; // Use the correct named import
+import * as jwtDecode from 'jwt-decode';
+ // Use the correct named import
 
 // create a new class to instantiate for a user
 class AuthService {
